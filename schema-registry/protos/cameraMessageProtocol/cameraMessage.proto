@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package co.cobli.cameraMessage;
+
+option java_multiple_files = true;
+option java_package = "co.cobli.cameraMessage.protos";
+option java_outer_classname = "CameraMessageProtos";
+
+message MessagePB {
+    uint32 protocolVersion = 1;
+    optional uint64 sequence = 2;
+    optional uint64 deviceId = 3;
+    MessageTypePB messageType = 4;
+    bytes message = 5;
+}
+
+enum MessageTypePB {
+    UNKNOWN_MESSAGE = 0;
+    ACK_MESSAGE = 1;
+    HEALTH_MESSAGE = 2;
+    SETTINGS_MESSAGE = 3;
+    COMMAND_MESSAGE = 4;
+}
