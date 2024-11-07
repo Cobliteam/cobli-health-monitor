@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package co.cobli.cameraMessage;
+
+option java_multiple_files = true;
+option java_package = "co.cobli.cameraMessage.protos";
+option java_outer_classname = "CommandMessageProtos";
+
+message CommandMessagePB {
+    CommandType type = 1;
+    optional string parameters = 2;
+}
+
+enum CommandType {
+    REBOOT = 0;
+    APP_UPDATE = 2;
+}
+
+enum IgnitionStatus{
+    OFF = 0;
+    ON = 1;
+    BOTH = 2;
+}

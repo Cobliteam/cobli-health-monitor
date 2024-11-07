@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Health Monitor</string>
+    <string name="notification_title">Cobli Health Monitor</string>
+    <string name="notification_text">Health Monitor is running</string>
+</resources>

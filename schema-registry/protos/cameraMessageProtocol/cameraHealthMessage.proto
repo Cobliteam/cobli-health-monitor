@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package co.cobli.cameraMessage;
+
+option java_multiple_files = true;
+option java_package = "co.cobli.cameraMessage.protos";
+option java_outer_classname = "CameraHealthMessageProtos";
+
+message HealthMessagePB {
+    repeated HealthDataPB healthData = 1;
+}
+
+message HealthDataPB {
+    uint64 timestamp = 1;
+    EventTypePB eventType = 2;
+    string firmwareVersion = 3;
+    int64 internalStorageCapacity = 4;
+    float internalStorageUsage = 5;
+    bool sdCardStatus = 6;
+    int64 sdCardCapacity = 7;
+    float sdCardUsage = 8;
+    float cpuUsage = 9;
+    float ramUsage = 10;
+    bool networkStatus = 11;
+    NetworkTypePB networkType = 12;
+    int64 wifiDataUsageRx = 13;
+    int64 wifiDataUsageTx = 14;
+    int64 mobileDataUsageRx = 15;
+    int64 mobileDataUsageTx = 16;
+    bool simCardStatus = 17;
+    string iccid = 18;
+    bool ignitionStatus = 19;
+    int64 bootTimestamp = 20;
+    int64 bootNumber = 21;
+    float powerVoltage = 22;
+    string appVersion = 23;
+    string macAddress = 24;
+}
+
+enum NetworkTypePB {
+    UNKNOWN_NETWORK = 0;
+    WIFI = 1;
+    MOBILE = 2;
+}
+
+enum EventTypePB {
+    UNKNOWN_EVENT = 0;
+    BOOT_TIMESTAMP_CHANGED = 1;
+    IGNITION_ON = 2;
+    IGNITION_OFF = 3;
+    NETWORK_STATUS_CHANGED = 4;
+    SD_CARD_INSERTED = 5;
+    SD_CARD_REMOVED = 6;
+    SIM_CARD_REMOVED = 7;
+}
